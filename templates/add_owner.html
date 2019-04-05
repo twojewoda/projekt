@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Dodaj nowego właściciela</h1>
+  <p>Dodaj nowego właściciela do formularza poniżej:</p>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.name.label }} {{ form.name() }}<br>
+      {{ form.pup_id.label }} {{ form.pup_id() }}<br>
+      {{ form.submit() }}
+  </form>
+</div>
+{% endblock %}
